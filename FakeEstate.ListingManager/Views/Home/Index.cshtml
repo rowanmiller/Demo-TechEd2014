@@ -1,0 +1,35 @@
+﻿@model IEnumerable<FakeEstate.ListingManager.Models.Listings.Listing>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Fake Estate Listing Manager</h1>
+    <p class="lead">Keeping our inventory fresh!</p>
+</div>
+
+<h2>New Listings</h2>
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (item.Photos != null & item.Photos.Any())
+                {
+                    <img src="@Url.Content(item.Photos.First().PhotoUrl)" width="150" />
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+        </tr>
+    }
+
+</table>
