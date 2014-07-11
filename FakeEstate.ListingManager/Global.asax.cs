@@ -39,10 +39,11 @@ namespace FakeEstate.ListingManager
 
             db.Listings.AddRange(new List<Listing> 
             {
-                new Listing
+                new CommercialListing
                 {
-                    Title = "Pavers, Pansies and Prestige!",
-                    Description = "Beautiful gardens, superb architecture and amazing attention to detail make this luxurious abode a one off home.",
+                    Title = "Bed and Breakfast Extraordinaire!",
+                    Description = "Beautiful gardens, superb architecture and amazing attention to detail make this luxurious house a highly profitable B&B.",
+                    ApprovedUses = "Only approved for use as a family run accommodation business",
                     Price = 850000,
                     Status = ListingStatus.Active,
                     Street = "100 Imaginary Lane",

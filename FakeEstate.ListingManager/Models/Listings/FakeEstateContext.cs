@@ -18,6 +18,11 @@ namespace FakeEstate.ListingManager.Models.Listings
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            // Map using TPT - this makes soft delete more complicated since not
+            // all tables have the IsDeleted column
+            modelBuilder.Entity<Listing>().ToTable("dbo.Listings");
+            modelBuilder.Entity<CommercialListing>().ToTable("dbo.CommercialListings");
+
             modelBuilder.Entity<Listing>()
                 .HasRequired(l => l.SellingAgent)
                 .WithMany(a => a.Listings)

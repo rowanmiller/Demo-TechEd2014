@@ -39,13 +39,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.1-alpha1-30509\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.1-alpha1-30509\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -149,6 +147,10 @@
     <Compile Include="Migrations\201405140538369_FullText.Designer.cs">
       <DependentUpon>201405140538369_FullText.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201407111910172_AllowCommercialListings.cs" />
+    <Compile Include="Migrations\201407111910172_AllowCommercialListings.Designer.cs">
+      <DependentUpon>201407111910172_AllowCommercialListings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EFHelpers\CreateFullTextIndexOperation.cs" />
     <Compile Include="Models\EFHelpers\DbMigrationExtensions.cs" />
@@ -158,6 +160,7 @@
     <Compile Include="Models\EFHelpers\SoftDeleteQueryVisitor.cs" />
     <Compile Include="Models\Listings\Agent.cs" />
     <Compile Include="Models\EFHelpers\DbContextExtensions.cs" />
+    <Compile Include="Models\Listings\CommercialListing.cs" />
     <Compile Include="Models\Listings\Configuration.cs" />
     <Compile Include="Models\Listings\FakeEstateContext.cs" />
     <Compile Include="Models\Listings\Listing.cs" />
@@ -237,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201405140538369_FullText.resx">
       <DependentUpon>201405140538369_FullText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201407111910172_AllowCommercialListings.resx">
+      <DependentUpon>201407111910172_AllowCommercialListings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
